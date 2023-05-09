@@ -11,5 +11,7 @@ for cep in ceps_pesquisar:
     navegador._capturaDados.PesquisaCep(cep.value)
     dados = navegador._capturaDados.CapturaDados()
 
-    print(dados)
     dados_capturados.append(dados)
+
+navegador._capturaDados.EscreveDados(dados_capturados)
+print("Dados capturados e salvos na planilha")
