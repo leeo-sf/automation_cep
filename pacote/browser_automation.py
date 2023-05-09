@@ -1,4 +1,5 @@
 from selenium import webdriver
+from data_catch import DataCatch
 import time
 
 
@@ -9,4 +10,4 @@ class Automation:
         self.__navegador.maximize_window()
         time.sleep(2)
         self.__navegador.get(url)
-        # data_cacth
+        self._capturaDados = DataCatch(self.__navegador)
