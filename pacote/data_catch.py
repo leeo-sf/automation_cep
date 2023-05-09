@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from openpyxl import Workbook, load_workbook
 import time
 
 
@@ -24,3 +25,9 @@ class DataCatch:
 
         self.__navegador.find_element(by=By.ID, value="btn_nbusca").click()
         return [cep,logradouro,bairro,localidade]
+    
+
+    def ReadPlanilha(self):
+        planilha = load_workbook(self.__caminho_plan + "cep.xlsx")
+        sheet = planilha.active
+        return sheet["A:A"]
